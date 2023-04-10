@@ -1,7 +1,11 @@
 # ai-extension README
 
-This is the README for your extension "ai-extension". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "ai-extension". Select text and send it to the chatbot.
 
+Commands are 
+1. `AI Refactor` `ai_refactor`. Select some code, then run the command, and it will replace and try to fix any errors.
+2. `AI Description 2 Code`  `ai_description2code`. Select some text, then run the command, and it will try to generate code from the description.
+<!-- 
 ## Features
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
@@ -78,4 +82,4 @@ pip install git+https://github.com/garland3/llminterface.git
 mkdir ~/.llminterface
 nano ~/.llminterface/.secrets.toml
 chat "hi"
-```
+``` -->

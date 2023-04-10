@@ -90,14 +90,14 @@ npm install -g vsce
 Then, run the following command in your extension's root directory to package it:
 
 go
+```
+vsce package
+```
+Publish your extension:
+To publish your extension to the Visual Studio Code Marketplace, you'll need a Personal Access Token (PAT) from your Azure DevOps account. Follow the instructions in the official documentation to create a PAT and publish your extension.
 
-    vsce package
-
-    Publish your extension:
-    To publish your extension to the Visual Studio Code Marketplace, you'll need a Personal Access Token (PAT) from your Azure DevOps account. Follow the instructions in the official documentation to create a PAT and publish your extension.
-
-    Update and maintain your extension:
-    As you receive feedback or need to make changes, update your extension code, test it, package it, and publish the updated version to the Marketplace.
+Update and maintain your extension:
+As you receive feedback or need to make changes, update your extension code, test it, package it, and publish the updated version to the Marketplace.
 
 For more information on developing VSCode extensions, consult the official documentation.
 -------------------------------------------------
@@ -220,3 +220,13 @@ Install the axios package for making HTTP requests by running npm install axios 
 Press F5 to launch the Extension Development Host window and test your extension. Select some text in the editor, press Ctrl+Shift+P, and type your command title to execute it.
 
 Make sure to replace yourExtension.yourCommand, Your Command Title, and the API endpoint with the appropriate values for your specific use case.
+
+### deploy just for me (not for the world) yet
+
+```
+npx webpack --mode production
+npm install vsce
+npx vsce package
+```
+```
+
