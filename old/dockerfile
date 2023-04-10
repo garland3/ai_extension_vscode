@@ -1,0 +1,28 @@
+FROM node:16
+
+# Install Python 3
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set Python 3 as default Python version
+RUN ln -sf /usr/bin/python3 /usr/bin/python
+
+# Set the default user to the one specified in the container configuration
+ARG REMOTE_USER=node
+RUN usermod -u 1000 ${REMOTE_USER}
+
+# Create app directory and set permissions
+WORKDIR /app
+RUN chown -R ${REMOTE_USER}:${REMOTE_USER} /app
+
+USER ${REMOTE_USER}
+
+# Install Node.js dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy the rest of the app
+COPY . .
+
+CMD ["npm", "start"]
