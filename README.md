@@ -1,6 +1,6 @@
 # ai-extension README
 
-This is the README for your extension "ai-extension". Select text and send it to the chatbot.
+ "ai-extension". Select text and send it to the chatbot.
 
 Commands are 
 1. `AI Refactor` `ai_refactor`. Select some code, then run the command, and it will replace and try to fix any errors.

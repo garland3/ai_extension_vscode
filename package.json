@@ -51,6 +51,7 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "@vscode/vsce": "^2.18.0",
     "axos": "^0.0.1",
     "openai": "^3.2.1",
     "toml": "^3.0.0",
