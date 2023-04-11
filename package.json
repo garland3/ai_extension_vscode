@@ -2,7 +2,11 @@
   "name": "ai-extension",
   "displayName": "AI Extension",
   "description": "Tool to help integrate chatgpt like llms into vscode.",
-  "icon": "images/robot.png",
+  "icon": "https://github.com/garland3/ai_extension_vscode/blob/main/images/robot.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/garland3/ai_extension_vscode/tree/main/images"
+  },
   "license": "LICENSE-2.0.txt",
   "publisher": "Anthony Garland",
   "version": "0.0.2",
@@ -12,7 +16,10 @@
   "categories": [
     "Other"
   ],
-  "activationEvents":["onCommand:ai-extension.ai_refactor", "onCommand:ai-extension.ai_description2code"],
+  "activationEvents": [
+    "onCommand:ai-extension.ai_refactor",
+    "onCommand:ai-extension.ai_description2code"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
