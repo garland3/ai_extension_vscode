@@ -9,7 +9,7 @@
   },
   "license": "LICENSE.txt",
   "publisher": "AnthonyGarland",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.77.0"
   },
@@ -30,6 +30,10 @@
       {
         "command": "ai-extension.ai_description2code",
         "title": "AI Description 2 Code"
+      },
+      {
+        "command": "ai-extension.chat",
+        "title": "AI Chat"
       }
     ]
   },

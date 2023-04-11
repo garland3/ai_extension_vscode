@@ -14,12 +14,19 @@ Put your openai api key in the env var `OPENAI_API_KEY` or in `~/.llminterface/.
 The general usage is to select some text in an editor, then run the command you want. 
 
 
-1. `AI Refactor` `ai_refactor`. Select some code, then run the command, and it will replace and try to fix any errors.
-2. `AI Description 2 Code`  `ai_description2code`. Select some text, then run the command, and it will try to generate code from the description.
+1. `AI Refactor`. Select some code, then run the command, and it will replace and try to fix any errors.
+2. `AI Description 2 Code` . Select some text, then run the command, and it will try to generate code from the description.
+3. `AI Chat`. Select some text, then run the command, and it will just call the chatgpt model and output the result. 
+
 
 
 ## Goal
 * Less copy and pasting to chatgpt, but getting the same work done. 
+
+
+## Future/Development
+
+`List  2 code` . Given a list of steps. Select the steps, then it will call openai to make code for each step. 
 
 <!-- 
 ## Features

@@ -37,7 +37,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 	// // CODE for FUNCTION ai_description2code command.
-	// CODE for FUNCTION ai_refactor command.
 	let disposableText2Code = vscode.commands.registerCommand('ai-extension.ai_description2code', async () => {
 		const selectedTextResult = getSelectedTextAndLanguage();
 		const selectedText = selectedTextResult[0];
@@ -45,10 +44,23 @@ export function activate(context: vscode.ExtensionContext) {
 		console.log(`Selected text: ${selectedText}\nLang is ${lang}`);
 		const message = `Hello. Please take this text description and make it into ${lang} code. Only return code. \n\n=======\n${selectedText}\n==========`;
 		const result = await openaiChat(message, openai);
-		await replaceSelectedText(result, true);
+		await replaceSelectedText("\n"+result, true);
 
 	});
 	context.subscriptions.push(disposableText2Code);
+
+	// // CODE for FUNCTION chat. Just sends the code directly to 
+	let disposableChat = vscode.commands.registerCommand('ai-extension.chat', async () => {
+		const selectedTextResult = getSelectedTextAndLanguage();
+		const selectedText = selectedTextResult[0];
+		const lang = selectedTextResult[1];
+		console.log(`Selected text: ${selectedText}\nLang is ${lang}`);
+		const message = selectedText;
+		const result = await openaiChat(message, openai);
+		await replaceSelectedText("\n"+result, true);
+
+	});
+	context.subscriptions.push(disposableChat);
 
 }
 
