@@ -1,4 +1,8 @@
-# ai-extension README
+# ai-extension 
+
+ <!-- add images/robot.png to my markdown  -->
+ ![robot](images/demo.gif)
+
 
  "ai-extension". Select text and send it to the chatbot.
 
@@ -6,9 +10,16 @@
 Put your openai api key in the env var `OPENAI_API_KEY` or in `~/.llminterface/.secrets.toml`. 
 
 ## Commands are 
+
+The general usage is to select some text in an editor, then run the command you want. 
+
+
 1. `AI Refactor` `ai_refactor`. Select some code, then run the command, and it will replace and try to fix any errors.
 2. `AI Description 2 Code`  `ai_description2code`. Select some text, then run the command, and it will try to generate code from the description.
 
+
+## Goal
+* Less copy and pasting to chatgpt, but getting the same work done. 
 
 <!-- 
 ## Features
