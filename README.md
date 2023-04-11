@@ -2,9 +2,14 @@
 
  "ai-extension". Select text and send it to the chatbot.
 
-Commands are 
+## API key
+Put your openai api key in the env var `OPENAI_API_KEY` or in `~/.llminterface/.secrets.toml`. 
+
+## Commands are 
 1. `AI Refactor` `ai_refactor`. Select some code, then run the command, and it will replace and try to fix any errors.
 2. `AI Description 2 Code`  `ai_description2code`. Select some text, then run the command, and it will try to generate code from the description.
+
+
 <!-- 
 ## Features
 

@@ -2,6 +2,9 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as TOML from 'toml';
 import { Configuration as CONFIGURATION, OpenAIApi as OPENAI_API } from "openai";
+import os = require('os');
+import path = require('path');
+
 
 export function activate(context: vscode.ExtensionContext) {
 	console.log("V3");
@@ -112,14 +115,23 @@ function getOpenAIApiKey(): string {
 	if (process.env.OPENAI_API_KEY) {
 		return process.env.OPENAI_API_KEY;
 	}
+	let secretsFilePath;
+	if (process.platform === 'win32') {
+		secretsFilePath = path.join(process.env.USERPROFILE, '.llminterface', '.secrets.toml');
+	} else {
+		secretsFilePath = path.join(os.homedir(), '.llminterface', '.secrets.toml');
+	}
 
-	const secretsFilePath = `${process.env.HOME}/.llminterface/.secrets.toml`;
+	// const secretsFilePath = `${process.env.HOME}/.llminterface/.secrets.toml`;
 	try {
 		const secretsFileContents = fs.readFileSync(secretsFilePath, 'utf8');
 		const secrets = TOML.parse(secretsFileContents);
 		return secrets.openaikey;
 	} catch (err) {
-		console.error('Failed to read OpenAI API key from TOML file or environment variable');
+		const txt = "Failed to read OpenAI API key from TOML file or environment variable";
+		console.error(txt);
+		// add a message box to alert the user. 
+		vscode.window.showInformationMessage(txt);
 		return '';
 	}
 }
