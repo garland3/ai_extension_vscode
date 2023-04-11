@@ -225,7 +225,7 @@ Make sure to replace yourExtension.yourCommand, Your Command Title, and the API 
 
 ```
 npx webpack --mode production
-npm install -g vsce
+npm install -g @vscode/vsce
 <!-- npm WARN deprecated vsce@2.15.0: vsce has been renamed to @vscode/vsce. Install using @vscode/vsce instead. -->
 npx vsce package
 ```
